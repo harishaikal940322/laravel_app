@@ -26,9 +26,9 @@
                                         <td>{{ $row->name }}</td>
                                         <td>
                                             @if ($row->active == 1)
-                                                <span class="badge badge-success">ACTIVE</span>
+                                                ACTIVE
                                             @else
-                                                <span class="badge badge-danger">NOT ACTIVE</span>
+                                                NOT ACTIVE
                                             @endif
                                         </td>
                                         <td><a href="{{ route('client.edit', $row->id) }}"
