@@ -27,5 +27,5 @@ Route::get('/client/create', [App\Http\Controllers\ClientsController::class, 'cr
 Route::get('/client/{id}/edit', [App\Http\Controllers\ClientsController::class, 'edit'])->name('client.edit');
 Route::get('/client/store', [App\Http\Controllers\ClientsController::class, 'store'])->name('client.store');
 Route::get('/client/{id}/update', [App\Http\Controllers\ClientsController::class, 'update'])->name('client.update');
-Route::get('/client/{id}/destroy', [App\Http\Controllers\ClientsController::class, 'destroy'])->name('client.destroy');
 
+Route::get('/flood', [App\Http\Controllers\GetApiController::class, 'index'])->name('flood');

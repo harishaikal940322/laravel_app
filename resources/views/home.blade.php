@@ -21,6 +21,7 @@
                 <div class="card">
                     <div class="card-body">
                         <a class="btn btn-primary" href="{{ route('client.index') }}">Client Page</a>
+                        <a class="btn btn-primary" href="{{ route('flood') }}">Flood</a>
                     </div>
                 </div>
             </div>
