@@ -10,7 +10,7 @@
                     </div>
                     <div class="card-body">
                         <a href="{{ route('client.create') }}" class="btn btn-success">ADD</a>
-                        <table class="table table-sm">
+                        <table class="table table-sm" border="1">
                             <thead>
                                 <tr>
                                     <td>#</td>
@@ -27,6 +27,9 @@
                                         <td>{{ $row->active }}</td>
                                         <td><a href="{{ route('client.edit', $row->id) }}"
                                                 class="btn btn-primary">UPDATE</a>
+                                            <form action="{{ route('client.destroy', $row->id) }}">
+                                                <input type="submit" value="DELETE" class="btn btn-danger">
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach

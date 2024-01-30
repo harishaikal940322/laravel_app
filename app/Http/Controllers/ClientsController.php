@@ -122,5 +122,11 @@ class ClientsController extends Controller
     public function destroy(string $id)
     {
         //
+        $q = Clients::findOrFail($id);
+        $q->delete();
+
+        return redirect()
+            ->route('client.index')
+            ->with('success', 'Data Saved');
     }
 }
