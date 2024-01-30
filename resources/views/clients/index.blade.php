@@ -10,7 +10,7 @@
                     </div>
                     <div class="card-body">
                         <a href="{{ route('client.create') }}" class="btn btn-success">ADD</a>
-                        <table class="table table-sm" border="1">
+                        <table class="table table-sm" border="1" id="tableClient">
                             <thead>
                                 <tr>
                                     <td>#</td>
@@ -24,7 +24,13 @@
                                     <tr>
                                         <td>{{ ++$x }}</td>
                                         <td>{{ $row->name }}</td>
-                                        <td>{{ $row->active }}</td>
+                                        <td>
+                                            @if ($row->active == 1)
+                                                <span class="badge badge-success">ACTIVE</span>
+                                            @else
+                                                <span class="badge badge-danger">NOT ACTIVE</span>
+                                            @endif
+                                        </td>
                                         <td><a href="{{ route('client.edit', $row->id) }}"
                                                 class="btn btn-primary">UPDATE</a>
                                             <form action="{{ route('client.destroy', $row->id) }}">
@@ -40,4 +46,9 @@
             </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function() {
+            var table = new DataTable("#tableClient");
+        });
+    </script>
 @endsection
